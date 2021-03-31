@@ -21,7 +21,7 @@ import UIKit
         - Parameter options: The options parameter with all the user customizations
         - Throws: **BlipErrors.emptyApiKey** if apiKey is nil, **BlipErrors.emptyCredentials** if authType is *.Dev* and *userIdentity* or *userPassowrd*  is nil.
     */
-    @objc public static func openBlipThread(myView: UIViewController, appKey: String, options:BlipOptions = BlipOptions()) throws{
+    @objc public static func openBlipThread(navController: UINavigationController, appKey: String, options:BlipOptions = BlipOptions()) throws{
         // Validate Options and ApiKey
         do {
             try validateSdkConfiguration(identifier: appKey, options: options)
@@ -34,12 +34,8 @@ import UIKit
         let viewController = storyboard.instantiateViewController(withIdentifier: "ThreadViewController") as! ThreadViewController
         viewController.appKey = appKey
         viewController.options = options
-        
-        if myView.navigationController == nil {
-            print("BlipChat Error: " + BlipErrors.emptyNoNavController.errorDescription!)
-            throw BlipErrors.emptyNoNavController
-        }
-        myView.navigationController?.pushViewController(viewController, animated: true)
+
+        navController.pushViewController(viewController, animated: true)
     }
     
     internal static func validateSdkConfiguration(identifier: String, options:BlipOptions) throws {
