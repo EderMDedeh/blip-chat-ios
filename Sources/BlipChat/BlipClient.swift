@@ -34,6 +34,7 @@ import UIKit
         let viewController = storyboard.instantiateViewController(withIdentifier: "ThreadViewController") as! ThreadViewController
         viewController.appKey = appKey
         viewController.options = options
+        viewController.hidesBottomBarWhenPushed = true
 
         navController.pushViewController(viewController, animated: true)
     }
