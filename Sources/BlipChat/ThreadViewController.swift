@@ -42,17 +42,6 @@ internal class ThreadViewController: UIViewController, WKNavigationDelegate, UIS
         NotificationCenter.default.addObserver(self, selector: #selector(ThreadViewController.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: self.view.window)
         NotificationCenter.default.addObserver(self, selector: #selector(ThreadViewController.keyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: self.view.window)
 
-        // Create cancel button
-        let leftArrow = UIImage(named:"leftArrow", in: Bundle.module, compatibleWith: nil);
-        var cancelButton: UIBarButtonItem? = nil;
-
-        if (leftArrow != nil) {
-            cancelButton = UIBarButtonItem(image: leftArrow, style: .plain, target: self, action: #selector(ThreadViewController.handleCancel))
-        } else {
-            cancelButton = UIBarButtonItem(title: "<", style: .plain, target: self, action: #selector(ThreadViewController.handleCancel))
-        }
-        
-        self.navigationController?.topViewController?.navigationItem.leftBarButtonItem = cancelButton
         self.navigationController?.topViewController?.navigationItem.title = self.options.windowTitle
         
         // Build html with user data
