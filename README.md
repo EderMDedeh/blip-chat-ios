@@ -11,28 +11,6 @@ Installation
 
 To use the BLiP Chat for iOS, you must target iOS 10 or later.
 
-Import the BLiP Chat for iOS into your project via CocoaPods:
-
-1. If you have not installed CocoaPods, install it by running the command:
-
-		$ [sudo] gem install cocoapods
-		$ pod setup
-
-2. Create a plain text file named `Podfile` (without any file extension) inside your project directory. Add the lines below to your file and replace `YourTarget` with your actual target name.
-
-		target 'YourTarget' do
-		  use_frameworks!
-		  pod "BlipChat"
-		end
-
-3. Run the following command.
-
-		$ pod install
-
-4. Open up `*.xcworkspace` with Xcode and start using the SDK.
-
-	**Note**: Do **NOT** use `*.xcodeproj`.  You receive an error if you open up a project file instead of a workspace.
-
 How to use
 -------------------------
 
