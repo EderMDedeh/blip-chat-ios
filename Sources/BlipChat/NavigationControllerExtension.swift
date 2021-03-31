@@ -6,7 +6,7 @@
 //  Copyright © 2018 Curupira. All rights reserved.
 //
 
-import Foundation
+import UIKit
 extension UINavigationController {
     
     override open var shouldAutorotate: Bool {
